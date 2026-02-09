@@ -1,13 +1,86 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    
-    <h1>hello world</h1>
-    <p> hello my name is srishti nice to meet you </p>
-</body>
-</html>
+ <head>
+ <meta charset="UTF-8" />
+ <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+ <title>Travel Card /title>
+ <link rel="stylesheet" href="style.css" />
+ /head>
+ <body>
+ <div class="glass-card">
+ <h1>Nature Awaits /h1>
+ <p>
+ Now that we are using an external CSS file, your HTML code looks much
+ cleaner! You can create 10 different HTML pages, link them all to
+ 'style.css', and they will all share this same beautiful design.
+ 
+ <table width="100%">
+ <tbody>
+ <tr>
+ <td align="center">
+ <p>
+ <strong>Name </strong> Yash saraswat <br />
+ <strong>Roll No </strong> 2400320101296
+ /p>
+ /td>
+ /tr>
+ /tbody>
+ /table>
+ /p>
+ <button class="btn-style">Explore Now /button>
+ /div>
+ /body>
+/html>
+style.css
+@import url("https://fonts.googleapis.com/css2?
+family=Dancing+Script:wght@700&family=Roboto:wght@300;500&display=swap");
+body {
+ background-image: url("https://images.unsplash.com/photo-1470071459604-
+3b5ec3a7fe05?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80");
+ background-size: cover;
+ background-repeat: no-repeat;
+ background-attachment: fixed;
+ margin: 0;
+ height: 100vh;
+ display: flex;
+ justify-content: center;
+ align-items: center;
+}
+h1 {
+ font-family: "Dancing Script", cursive;
+ font-size: 3.5rem;
+ color: #ffffff;
+ text-shadow: 2px 2px 4px #000000;
+ margin-bottom: 10px;
+ text-align: center;
+}
+p {
+ font-family: "Roboto", sans-serif;
+ font-size: 1.1rem;
+ color: #333;
+ line-height: 1.6;
+}
+.glass-card {
+ background-color: rgba(255, 255, 255, 0.85);
+ width: 500px;
+ padding: 40px;
+ border-radius: 15px;
+ box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+ border: 1px solid rgba(255, 255, 255, 0.3);
+}
+.btn-style {
+ background-color: #ff6b6b;
+ color: white;
+ font-family: "Roboto", sans-serif;
+ font-weight: 500;
+ padding: 10px 20px;
+ border: none;
+ border-radius: 5px;
+ cursor: pointer;
+ display: block;
+ margin: 20px auto 0 auto;
+ transition: background 0.3s;
+}
+.btn-style:hover {
+ background-color: #ff4757;
+}

@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cuisino | Food Ordering</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Poppins", sans-serif;
+    }
+
+    body {
+      background-color: #fff8f8;
+      color: #333;
+    }
+
+    header {
+      background: linear-gradient(90deg, #ff4d4d, #ff6a6a);
+      color: white;
+      padding: 20px 50px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+    }
+
+    header h1 {
+      font-size: 28px;
+      letter-spacing: 1px;
+    }
+
+    nav ul {
+      display: flex;
+      gap: 25px;
+      list-style: none;
+    }
+
+    nav ul li a {
+      text-decoration: none;
+      color: white;
+      font-weight: 500;
+      transition: 0.3s;
+    }
+
+    nav ul li a:hover {
+      color: #ffe2e2;
+    }
+
+    .hero {
+      background-image: url("https://images.unsplash.com/photo-1600891964599-f61ba0e24092?w=1200");
+      background-size: cover;
+      background-position: center;
+      height: 60vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      text-shadow: 0 3px 10px rgba(0,0,0,0.6);
+      text-align: center;
+    }
+
+    .hero h2 {
+      font-size: 42px;
+      background: rgba(0,0,0,0.4);
+      padding: 20px 40px;
+      border-radius: 12px;
+    }
+
+    .menu-section {
+      max-width: 1100px;
+      margin: 50px auto;
+      text-align: center;
+    }
+
+    .menu-section h2 {
+      color: #ff4d4d;
+      font-size: 32px;
+      margin-bottom: 20px;
+    }
+
+    .menu-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 25px;
+      padding: 0 20px;
+    }
+
+    .menu-item {
+      background: white;
+      border-radius: 16px;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+      overflow: hidden;
+      transition: transform 0.3s;
+    }
+
+    .menu-item:hover {
+      transform: translateY(-5px);
+    }
+
+    .menu-item img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+    }
+
+    .menu-info {
+      padding: 15px;
+      text-align: left;
+    }
+
+    .menu-info h3 {
+      font-size: 18px;
+      margin-bottom: 5px;
+    }
+
+    .menu-info p {
+      font-size: 14px;
+      color: #777;
+      margin-bottom: 10px;
+    }
+
+    .price {
+      font-weight: bold;
+      color: #ff4d4d;
+    }
+
+    .add-btn {
+      background: #ff4d4d;
+      color: white;
+      border: none;
+      padding: 8px 16px;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .add-btn:hover {
+      background: #ff2f2f;
+    }
+
+    .footer {
+      background: #333;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      margin-top: 50px;
+    }
+
+    .footer p {
+      font-size: 14px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Cuisino</h1>
+    <nav>
+      <ul>
+        <li><a href="#menu">Menu</a></li>
+        <li><a href="#">Deals</a></li>
+        <li><a href="#">Cart</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <h2>Delicious Meals, Delivered Fast & Fresh 🍕</h2>
+  </section>
+
+  <section id="menu" class="menu-section">
+    <h2>Our Popular Dishes</h2>
+    <div class="menu-grid">
+      <div class="menu-item">
+        <img src="https://images.unsplash.com/photo-1601924638867-3ec4b1f76a13?w=800" alt="Pizza">
+        <div class="menu-info">
+          <h3>Margherita Pizza</h3>
+          <p>Classic cheese & tomato delight</p>
+          <div class="price">₹199</div>
+          <button class="add-btn">Add to Cart</button>
+        </div>
+      </div>
+
+      <div class="menu-item">
+        <img src="https://images.unsplash.com/photo-1604908177522-4b6a5adb7f2a?w=800" alt="Wrap">
+        <div class="menu-info">
+          <h3>Paneer Tikka Wrap</h3>
+          <p>Spicy paneer in soft tortilla</p>
+          <div class="price">₹129</div>
+          <button class="add-btn">Add to Cart</button>
+        </div>
+      </div>
+
+      <div class="menu-item">
+        <img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=800" alt="Burger">
+        <div class="menu-info">
+          <h3>Veg Burger</h3>
+          <p>Crunchy veggie patty & soft bun</p>
+          <div class="price">₹119</div>
+          <button class="add-btn">Add to Cart</button>
+        </div>
+      </div>
+
+      <div class="menu-item">
+        <img src="https://images.unsplash.com/photo-1542827638-32d9f1e0d4a3?w=800" alt="Dessert">
+        <div class="menu-info">
+          <h3>Choco Lava Cake</h3>
+          <p>Warm & gooey chocolate center</p>
+          <div class="price">₹89</div>
+          <button class="add-btn">Add to Cart</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <p>© 2025 Cuisino. All rights reserved. Delivering multiple items at once at low prices 🍴</p>
+  </footer>
+</body>
+</html>

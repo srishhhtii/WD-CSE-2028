@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSS Flexbox Cheat Sheet</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #f7f5ff;
+      color: #333;
+      margin: 0;
+      padding: 20px;
+    }
+
+    h1 {
+      text-align: center;
+      font-size: 2.5em;
+      color: #333;
+      margin-bottom: 10px;
+    }
+
+    h2 {
+      color: #553c9a;
+      border-bottom: 2px solid #d6bcfa;
+      padding-bottom: 5px;
+      margin-top: 40px;
+    }
+
+    .container {
+      background: #d6bcfa;
+      border-radius: 10px;
+      padding: 15px;
+      margin: 20px 0;
+    }
+
+    .flex-demo {
+      display: flex;
+      background: #805ad5;
+      border-radius: 10px;
+      padding: 10px;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 10px;
+    }
+
+    .item {
+      background: #f6ad55;
+      height: 50px;
+      width: 50px;
+      border-radius: 5px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-weight: bold;
+    }
+
+    /* Demonstrations */
+    .direction-row { flex-direction: row; }
+    .direction-column { flex-direction: column; }
+    .justify-center { justify-content: center; }
+    .justify-between { justify-content: space-between; }
+    .justify-around { justify-content: space-around; }
+    .align-center { align-items: center; height: 100px; }
+    .align-end { align-items: flex-end; height: 100px; }
+    .wrap { flex-wrap: wrap; width: 150px; }
+    .nowrap { flex-wrap: nowrap; }
+
+    /* Item properties */
+    .grow .item:nth-child(2) { flex-grow: 2; }
+    .order .item:nth-child(1) { order: 3; }
+    .order .item:nth-child(3) { order: 1; }
+
+    pre {
+      background: #1a202c;
+      color: #fbd38d;
+      padding: 10px;
+      border-radius: 8px;
+      overflow-x: auto;
+      font-size: 0.9em;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>CSS Flexbox Cheat Sheet</h1>
+
+  <h2>1. Basic Flex Container</h2>
+  <pre>container {
+  display: flex;
+}</pre>
+  <div class="container">
+    <div class="flex-demo direction-row">
+      <div class="item">1</div>
+      <div class="item">2</div>
+      <div class="item">3</div>
+    </div>
+  </div>
+
+  <h2>2. Flex Direction</h2>
+  <pre>flex-direction: row | row-reverse | column | column-reverse;</pre>
+  <div class="container">
+    <div class="flex-demo direction-row">
+      <div class="item">→</div><div class="item">→</div><div class="item">→</div>
+    </div>
+    <div class="flex-demo direction-column">
+      <div class="item">↓</div><div class="item">↓</div><div class="item">↓</div>
+    </div>
+  </div>
+
+  <h2>3. Justify Content</h2>
+  <pre>justify-content: flex-start | flex-end | center | space-between | space-around;</pre>
+  <div class="container">
+    <div class="flex-demo justify-center">
+      <div class="item">1</div><div class="item">2</div><div class="item">3</div>
+    </div>
+    <div class="flex-demo justify-between">
+      <div class="item">1</div><div class="item">2</div><div class="item">3</div>
+    </div>
+  </div>
+
+  <h2>4. Align Items</h2>
+  <pre>align-items: flex-start | flex-end | center | baseline | stretch;</pre>
+  <div class="container">
+    <div class="flex-demo align-center">
+      <div class="item">A</div><div class="item" style="height:80px;">B</div><div class="item">C</div>
+    </div>
+  </div>
+
+  <h2>5. Flex Wrap</h2>
+  <pre>flex-wrap: nowrap | wrap | wrap-reverse;</pre>
+  <div class="container">
+    <div class="flex-demo wrap">
+      <div class="item">1</div><div class="item">2</div><div class="item">3</div>
+      <div class="item">4</div><div class="item">5</div><div class="item">6</div>
+    </div>
+  </div>
+
+  <h2>6. Order</h2>
+  <pre>order: <number>; /* default is 0 */</pre>
+  <div class="container order">
+    <div class="flex-demo">
+      <div class="item">1</div><div class="item">2</div><div class="item">3</div>
+    </div>
+  </div>
+
+  <h2>7. Flex Grow / Shrink / Basis</h2>
+  <pre>flex: grow shrink basis;</pre>
+  <div class="container grow">
+    <div class="flex-demo" style="width:300px;">
+      <div class="item">1</div><div class="item">2</div><div class="item">3</div>
+    </div>
+  </div>
+
+</body>
+</html>

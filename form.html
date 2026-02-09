@@ -1,28 +1,104 @@
-
+<!DOCTYPE html>
 <html>
-    <body style="text-align: center;">
-        <h1 style="background-color:DodgerBlue;text-align: center;"><b>Student Information</b></h1>
-          <form style="background-color: lightblue; padding: 100px;">
-                NAME: <input type="text" name="name"><br>
-            CLASS: <input type="number" name="class"><br>
-            PASSWORD: <input type="password" name="password"><br>
-            DOB: <input type="date" name="dob"><br>
-            COLLEGE: <input type="number" value="number"><br>       
-            <input type="checkbox" name="l1" value="hindi">HINDI<br>
-            <input type="checkbox" name="l1" value="english">ENGLISH<br>
-            <input type="checkbox" name="l1" value="french">FRENCH<br>
-            <label> MESSAGE: <br> <textarea row="3" cols="30"></textarea>
-            </label> <br>
-            <label>SELECT COURSE</label>
-            <select id="course" name="course">
-                <option value="html">HTML</option>
-                <option value="css">CSS</option><br>
-                <br><input type="radio" name="gender" value="male"> Male
-                 <input type="radio" name="gender" value="female"> Female
-                 <input type="submit" value="Submit" style="display: block; margin: 0 auto;">
-                 </select>
-            <input type="reset" value="reset" style="display: block; margin: 0 auto;">
-            
-        </form>
-    </body>
+<body style="text-align: center;">
+
+<h1 style="background-color: DodgerBlue; text-align: center;"><b>Student Information</b></h1>
+
+<form id="studentForm" onsubmit="return validateForm()" style="background-color: lightblue(55, 144, 173); padding: 40px;">
+
+    NAME: <input type="text" id="name"><br><br>
+    CLASS: <input type="number" id="class"><br><br>
+    PASSWORD: <input type="password" id="password"><br><br>
+    DOB: <input type="date" id="dob"><br><br>
+    COLLEGE: <input type="text" id="college"><br><br>
+
+    <b>Select Languages:</b><br>
+    <input type="checkbox" name="l1" value="hindi"> HINDI<br>
+    <input type="checkbox" name="l1" value="english"> ENGLISH<br>
+    <input type="checkbox" name="l1" value="french"> FRENCH<br><br>
+
+    <label>MESSAGE: <br><textarea rows="3" cols="30" id="msg"></textarea></label><br><br>
+
+    <label>SELECT COURSE</label>
+    <select id="course" name="course">
+        <option value="">-- select --</option>
+        <option value="html">HTML</option>
+        <option value="css">CSS</option>
+    </select><br><br>
+
+    <input type="radio" name="gender" value="male"> Male
+    <input type="radio" name="gender" value="female"> Female <br><br>
+
+    <input type="submit" value="Submit" style="display: block; margin: 0 auto;">
+    <br>
+    <input type="reset" value="Reset" style="display: block; margin: 0 auto;">
+
+</form>
+
+<script>
+function validateForm() {
+
+    let name = document.getElementById("name").value;
+    let cls = document.getElementById("class").value;
+    let password = document.getElementById("password").value;
+    let dob = document.getElementById("dob").value;
+    let college = document.getElementById("college").value;
+    let course = document.getElementById("course").value;
+
+    // Name
+    if (name === "") {
+        alert("Please enter your name");
+        return false;
+    }
+
+    // Class
+    if (cls === "" || cls <= 0) {
+        alert("Please enter a valid class");
+        return false;
+    }
+
+    // Password
+    if (password.length < 4) {
+        alert("Password must be at least 4 characters");
+        return false;
+    }
+
+    // DOB
+    if (dob === "") {
+        alert("Please select Date of Birth");
+        return false;
+    }
+
+    // College
+    if (college === "") {
+        alert("Please enter college name");
+        return false;
+    }
+
+    // Languages
+    let lang = document.querySelectorAll('input[name="l1"]:checked');
+    if (lang.length === 0) {
+        alert("Please select at least one language");
+        return false;
+    }
+
+    // Course
+    if (course === "") {
+        alert("Please select a course");
+        return false;
+    }
+
+    // Gender
+    let gender = document.querySelector('input[name="gender"]:checked');
+    if (!gender) {
+        alert("Please select gender");
+        return false;
+    }
+
+    alert("Form Submitted Successfully!");
+    return true; // allow submit
+}
+</script>
+
+</body>
 </html>
